@@ -1,4 +1,5 @@
 
+
 /**
  * This class represents a simple picture. You can draw the picture using
  * the draw method. But wait, there's more: being an electronic picture, it
@@ -16,6 +17,10 @@ public class Picture
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Square background;
+    private Square door;
+    private Square doors;
+    private Circle knob;
 
     /**
      * Constructor for objects of class Picture
@@ -30,13 +35,20 @@ public class Picture
      */
     public void draw()
     {
+        background = new Square();
+        background.changeColor("blue");
+        background.moveHorizontal(-50);
+        background.moveVertical(-50);
+        background.makeVisible();
+        background.changeSize(300);
+        
         wall = new Square();
         wall.moveVertical(80);
         wall.changeSize(100);
         wall.makeVisible();
 
         window = new Square();
-        window.changeColor("black");
+        window.changeColor("yellow");
         window.moveHorizontal(20);
         window.moveVertical(100);
         window.makeVisible();
@@ -53,6 +65,25 @@ public class Picture
         sun.moveVertical(-10);
         sun.changeSize(60);
         sun.makeVisible();
+        
+        door = new Square();
+        door.changeColor("black");
+        door.moveHorizontal(55);
+        door.moveVertical(150);
+        door.makeVisible();
+        
+        doors = new Square();
+        doors.changeColor("black");
+        doors.moveHorizontal(55);
+        doors.moveVertical(125);
+        doors.makeVisible();
+        
+        knob = new Circle();
+        knob.changeColor("yellow");
+        knob.moveHorizontal(95);
+        knob.moveVertical(135);
+        knob.changeSize(5);
+        knob.makeVisible();
     }
 
     /**
